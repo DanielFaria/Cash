@@ -1,6 +1,6 @@
 package br.com.ideiadascoisas.domain;
 
-import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 
 /***
@@ -11,15 +11,15 @@ import java.math.BigDecimal;
  */
 enum ARREDONDAMENTO {
 
-	ACIMA(BigDecimal.ROUND_HALF_UP), ABAIXO(BigDecimal.ROUND_DOWN);
+	ACIMA(RoundingMode.HALF_UP), ABAIXO(RoundingMode.HALF_DOWN);
 
-	private Integer arredondamento;
+	private RoundingMode arredondamento;
 
-	private ARREDONDAMENTO(Integer arredonadamento) {
-		this.arredondamento = arredonadamento;
+	private ARREDONDAMENTO(RoundingMode arredondamento) {
+		this.arredondamento = arredondamento;
 	}
 
-	public Integer getArredondamento() {
+	public RoundingMode getArredondamento() {
 		return arredondamento;
 	}
 
